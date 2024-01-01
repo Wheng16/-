@@ -1,5 +1,7 @@
 package com.weiheng.shuttlespace.dto;
 
+import java.util.Date;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +11,7 @@ public class PlayerDto {
     
     private String name;
 
-    private int age;
+    private Date dateOfBirth;
     
     private String gender;
 

@@ -16,23 +16,23 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @RestController
 @RequestMapping("/players")
 @Validated
 @Slf4j
-
 public class PlayerController {
 
     private final PlayerService playerService;
+    private final ModelMapper modelMapper;
     
     public PlayerController(PlayerService playerService, ModelMapper modelMapper){
         this.playerService = playerService;
-        log.info("User Controller created");
+        this.modelMapper = modelMapper;
+        log.info("Player Controller created!");
     }
 
     // Get all users
-    @GetMapping("")
+    @GetMapping()
     public ResponseEntity<List<Player>> getUsers() {
         return new ResponseEntity(playerService.getPlayers(), HttpStatus.OK);
     }
